@@ -33,10 +33,13 @@ class SmarthomeController extends Controller
 
     public function apiStatus()
     {
+        $data = Smarthome::first();
+
         return response()->json([          
             'lampu_tidur' => (bool)$data->lampu_tidur,            
             'ac' => (bool)$data->ac,            
-            'wifi' => (bool)$data->wifi,            
+            'wifi' => (bool)$data->wifi,    
+            'tv' => (bool)$data->tv,        
             'smart_plug' => (bool)$data->smart_plug,            
             'smart_lock' => (bool)$data->smart_lock,            
         ]);
